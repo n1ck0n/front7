@@ -3,13 +3,12 @@ const FILES_TO_CACHE = [
   '/',
   '/index.html',
   '/manifest.json',
-  'icon-192.png',  // Убедитесь, что файл существует
-  'icon-512.png',  // Убедитесь, что файл существует
+  'icon-192.png',
+  'icon-512.png',
   '/static/js/main.js',
   '/static/css/main.css'
 ];
 
-// Устанавливаем сервис-воркер
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -22,7 +21,6 @@ self.addEventListener('install', (event) => {
   );
 });
 
-// Обновляем сервис-воркер
 self.addEventListener('activate', (event) => {
   const cacheWhitelist = [CACHE_NAME];
 
@@ -39,17 +37,14 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Обрабатываем запросы и пытаемся получить их из кэша
 self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(event.request)
       .then((cachedResponse) => {
-        // Если ресурс найден в кэше, возвращаем его
         if (cachedResponse) {
           return cachedResponse;
         }
 
-        // Если ресурса нет в кэше, делаем запрос к сети
         return fetch(event.request);
       })
   );

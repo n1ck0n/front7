@@ -5,7 +5,7 @@ const NotesApp = () => {
   const [noteText, setNoteText] = useState("");
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [selectedNote, setSelectedNote] = useState(null);
-  const [deferredPrompt, setDeferredPrompt] = useState(null); // Для события установки
+  const [deferredPrompt, setDeferredPrompt] = useState(null); 
 
   useEffect(() => {
     const savedNotes = JSON.parse(localStorage.getItem("notes")) || [];
@@ -27,7 +27,6 @@ const NotesApp = () => {
   }, []);
 
   useEffect(() => {
-    // Слушаем событие beforeinstallprompt для отображения кнопки
     const onBeforeInstallPrompt = (e) => {
       e.preventDefault();
       setDeferredPrompt(e);
@@ -68,7 +67,6 @@ const NotesApp = () => {
 
   const installApp = () => {
     if (deferredPrompt) {
-      // Показать системный диалог
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
@@ -76,7 +74,7 @@ const NotesApp = () => {
         } else {
           console.log("Пользователь отклонил установку");
         }
-        setDeferredPrompt(null); // Сбросим deferredPrompt после установки
+        setDeferredPrompt(null); 
       });
     }
   };
