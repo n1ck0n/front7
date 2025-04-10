@@ -1,12 +1,53 @@
-# React + Vite
+# 📝 Заметки — PWA-приложение для офлайн-заметок
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Минималистичное прогрессивное веб-приложение (PWA) для создания и хранения текстовых заметок. Работает полностью офлайн, может быть установлено на домашний экран как нативное приложение.
 
-Currently, two official plugins are available:
+## 🚀 Возможности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📌 Добавление, удаление, просмотр заметок
+- 💾 Сохранение заметок в `localStorage`
+- ⚡ Офлайн-доступ к приложению и заметкам
+- 📱 Установка на главный экран (Android / iOS / Desktop)
+- 🔴 Надпись `"Офлайн-режим"` при потере соединения
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Установка и запуск
+
+### 🔁 1. Клонируй репозиторий
+
+```bash
+git clone https://github.com/твоя-ссылка/notes-pwa.git
+cd notes-pwa
+```
+
+###📦 2. Установи зависимости
+
+```bash
+npm install
+```
+
+###🧪 3. Запусти приложение в режиме разработки
+
+```bash
+npm run dev
+```
+
+Открой браузер и перейди по адресу:
+
+```bash
+http://localhost:5173
+```
+
+
+###📲 Как установить как PWA
+
+1. Зайди на сайт через мобильный или десктопный браузер (например, Chrome).
+
+2. Нажми на кнопку Добавить на главный экран, если она появилась.
+
+3. Либо:
+
+В Chrome нажми ⋮ → Добавить на главный экран.
+
+В Safari (iOS) нажми Поделиться → На экран «Домой».
